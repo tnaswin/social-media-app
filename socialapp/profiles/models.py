@@ -13,7 +13,7 @@ class Profile(models.Model):
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.user.username}-{self.created}"
+        return f"{self.user.username}-{self.created.strftime('%d-%m-%Y')}"
 
     def save(self, *args, **kwargs):
         ex = False
